@@ -10,7 +10,7 @@ const index = () => {
   const [inputValue, setInputValue] = useState(null)
   useEffect(() => {
     fetchData()
-  }, [filterApi,setInputValue]);
+  }, [filterApi, setInputValue]);
   const chooseFilter = (filterApi) => {
     setFilterApi(filterApi);
   };
@@ -20,7 +20,7 @@ const index = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(filterApi);
-      
+
       setProductdata(response.data)
     } catch (error) {
       console.log(error);
@@ -28,25 +28,27 @@ const index = () => {
   }
   console.log(productData);
   return (
-    <div className='md:dark:bg-gray-900 h-full'>
-      <Navbar />
-      <div className='grid grid-cols-8 max-md:flex max-md:flex-col max-md:justify-center max-md:items-center gap-2'>
-        <Filter chooseFilter={chooseFilter} className="grid" getInputValue={getInputValue} />
-        <div className='grid grid-cols-4 col-span-7 max-sm: gap-5 p-10 max-sm:grid-cols-1 max-lg:grid-cols-2 max-xl:grid-cols-3'>
-          {productData?.map((value, index) => {
-            console.log(value);
-            if (!inputValue) {
-              return (
-                <Card key={value.id} desc={value.description} img={value.image} price={value.price} title={value.title} />
-              )
-            } else {
-              const lowerCaseTitle = value.title.toLowerCase();
+    <div className='md:dark:bg-gray-900 h-screen'>
+      <div className='md:dark:bg-gray-900'>
+        <Navbar />
+        <div className='grid grid-cols-8 max-md:flex max-md:flex-col max-md:justify-center max-md:items-center gap-2'>
+          <Filter chooseFilter={chooseFilter} className="grid" getInputValue={getInputValue} />
+          <div className='grid grid-cols-4 col-span-7 max-sm: gap-5 p-10 max-sm:grid-cols-1 max-lg:grid-cols-2 max-xl:grid-cols-3'>
+            {productData?.map((value, index) => {
+              console.log(value);
+              if (!inputValue) {
+                return (
+                  <Card key={value.id} desc={value.description} img={value.image} price={value.price} title={value.title} />
+                )
+              } else {
+                const lowerCaseTitle = value.title.toLowerCase();
 
-              if (lowerCaseTitle.includes(inputValue)) {
-                return (<Card key = { value.id } desc = { value.description } img = { value.image } price = { value.price } title = { value.title } />)
-          }
-            }
-          })}
+                if (lowerCaseTitle.includes(inputValue)) {
+                  return (<Card key={value.id} desc={value.description} img={value.image} price={value.price} title={value.title} />)
+                }
+              }
+            })}
+          </div>
         </div>
 
       </div>
