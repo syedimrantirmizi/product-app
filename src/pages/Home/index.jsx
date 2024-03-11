@@ -28,7 +28,7 @@ const Home = () => {
   }
   return (
     <>
-      <div className='md:dark:bg-gray-900 h-screen '>
+      <div className='md:dark:bg-gray-900 h-full min-h-screen'>
         <div className='md:dark:bg-gray-900'>
           <Navbar />
           <div className='grid grid-cols-8 max-md:flex max-md:flex-col max-md:justify-center max-md:items-center gap-2'>

@@ -39,21 +39,21 @@ const Logout = () => {
           </p>
         </div>
         <div className="w-[70%] p-10 flex justify-around flex-col text-white gap-5 bg-blue-100 md:dark:bg-blue-900/30 rounded-lg">
-          <div className="flex items-center gap-10 bg-blue-700 rounded-lg p-5 max-sm:flex-col">
+          <div className="flex items-center gap-10 bg-blue-700 rounded-lg p-5 max-sm:flex-col max-sm:text-center ">
             <p className="font-bold text-2xl">Name : </p>
-            <p className="text-lg">{name}</p>
+            <p className="text-lg max-sm:w-full break-words">{name}</p>
           </div>
-          <div className="flex items-center gap-10 bg-blue-700 rounded-lg p-5 max-sm:flex-col">
-            <p className="font-bold text-2xl">Email : </p>
-            <p className="text-lg">{email}</p>
+          <div className="flex items-center gap-10 bg-blue-700 rounded-lg p-5 max-sm:flex-col max-sm:text-center">
+            <p className="font-bold text-2xl ">Email : </p>
+            <p className="text-lg max-sm:w-full break-words">{email}</p>
           </div>
-          <div className="flex items-center gap-10 bg-blue-700 rounded-lg p-5 max-sm:flex-col">
-            <p className="font-bold text-2xl">Phone Number : </p>
-            <p className="text-lg">{phoneNo}</p>
+          <div className="flex items-center gap-10 bg-blue-700 rounded-lg p-5 max-sm:flex-col max-sm:text-center">
+            <p className="font-bold text-2xl ">Phone Number : </p>
+            <p className="text-lg max-sm:w-full break-words">{phoneNo}</p>
           </div>
-          <div className="flex items-center gap-10 bg-blue-700 rounded-lg p-5 max-sm:flex-col">
+          <div className="flex items-center gap-10 bg-blue-700 rounded-lg p-5 max-sm:flex-col max-sm:text-center">
             <p className="font-bold text-2xl">Date Of Birthday :</p>{" "}
-            <p className="text-lg">{dob}</p>
+            <p className="text-lg max-sm:w-full break-words">{dob}</p>
           </div>
         </div>
         <div className="w-[70%] flex justify-start ">
