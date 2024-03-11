@@ -1,10 +1,10 @@
 import React from 'react'
 import Navbar from '../../components/Navbar'
 
-const index = () => {
+const Contact = () => {
   return (
     <div><Navbar/></div>
   )
 }
 
-export default index
+export default Contact
