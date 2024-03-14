@@ -46,39 +46,39 @@ const Signup = () => {
                     <p className='text-center mb-3 block text-3xl font-medium text-[#07074D] md:dark:text-gray-400'>Sign in</p>
                     <form onSubmit={getData}>
                         <div className="mb-5">
-                            <label htmlFor="name" className="mb-3 block text-base font-medium text-[#07074D] md:dark:text-gray-400 ">
+                            <p htmlFor="name" className="mb-3 block text-base font-medium text-[#07074D] md:dark:text-gray-400 ">
                                 Full Name
-                            </label>
+                            </p>
                             <input type="text" onChange={(e) => setFullName(e.target.value)} placeholder="Full Name"
                                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                         </div>
                         <div className="mb-5">
-                            <label htmlFor="phone" className="mb-3 block text-base font-medium text-[#07074D] md:dark:text-gray-400">
+                            <p htmlFor="phone" className="mb-3 block text-base font-medium text-[#07074D] md:dark:text-gray-400">
                                 Phone Number
-                            </label>
+                            </p>
                             <input type="text" onChange={(e) => setPhoneNo(e.target.value)} placeholder="Enter your phone number"
                                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                         </div>
                         <div className="mb-5">
-                            <label htmlFor="email" className="mb-3 block text-base font-medium text-[#07074D] md:dark:text-gray-400">
+                            <p htmlFor="email" className="mb-3 block text-base font-medium text-[#07074D] md:dark:text-gray-400">
                                 Email Address
-                            </label>
+                            </p>
                             <input type="email" onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email"
                                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                         </div>
                         <div className="mb-5">
-                            <label htmlFor="password" className="mb-3 block text-base font-medium text-[#07074D] md:dark:text-gray-400">
+                            <p htmlFor="password" className="mb-3 block text-base font-medium text-[#07074D] md:dark:text-gray-400">
                                 Password
-                            </label>
+                            </p>
                             <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Enter your Password"
                                 className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                         </div>
                         <div className="-mx-3 flex flex-wrap">
                             <div className="w-full px-3 ">
                                 <div className="mb-5">
-                                    <label htmlFor="date" className="mb-3 block text-base font-medium text-[#07074D] md:dark:text-gray-400">
+                                    <p htmlFor="date" className="mb-3 block text-base font-medium text-[#07074D] md:dark:text-gray-400">
                                         Date of Birth
-                                    </label>
+                                    </p>
                                     <input type="date" onChange={(e) => setDob(e.target.value)}
                                         className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" />
                                 </div>

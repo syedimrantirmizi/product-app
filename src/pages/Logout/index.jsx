@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar";
 import { db } from "../../firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import LoadingScreen from "../LoadingScreen";
 
 const Logout = () => {
   const uid = localStorage.getItem("uid");
@@ -10,12 +11,20 @@ const Logout = () => {
   const [email, setEmail] = useState(null);
   const [phoneNo, setPhoneNo] = useState(null);
   const [dob, setDob] = useState(null);
+  const [navName, setNavName] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
   const navigate = useNavigate();
   const getData = async (uid) => {
     const docRef = doc(db, "users", uid);
     const docSnap = await getDoc(docRef);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 0);
+    console.log(docSnap);
     if (docSnap.exists()) {
       const data = docSnap.data();
+      setNavName(data.name);
       setName(data.name);
       setEmail(data.email);
       setPhoneNo(data.phoneNo);
@@ -24,13 +33,15 @@ const Logout = () => {
       console.log("No such document!");
     }
   };
-
   useEffect(() => {
     getData(uid);
   }, []);
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
   return (
     <div className="h-full min-h-screen md:dark:bg-gray-900">
-      <Navbar />
+      <Navbar name={navName} />
 
       <div className="w-full flex flex-col items-center py-10 gap-10 ">
         <div className="flex justify-start w-[70%] p-10 text-white max-sm:justify-center bg-blue-100 md:dark:bg-blue-900/30 rounded-lg">

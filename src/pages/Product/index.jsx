@@ -30,7 +30,7 @@ const Product = () => {
             alt=""
           />
         </div>
-        <div className="flex flex-col gap-10 justify-center border-blue-500 h-[450px] w-[600px] max-sm:w-full md:dark:border-y-2 border-y p-10">
+        <div className="flex flex-col gap-10 justify-centger border-blue-500 h-[450px] w-[600px] max-sm:w-full md:dark:border-y-2 border-y p-10">
           <p className="font-bold text-xl md:dark:text-gray-400">
             {singleData?.title}
           </p>

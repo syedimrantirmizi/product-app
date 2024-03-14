@@ -45,12 +45,12 @@ const Login = () => {
           </p>
           <form onSubmit={getData}>
             <div className="mb-5">
-              <label
+              <p
                 htmlFor="email"
                 className="mb-3 block text-base font-medium text-[#07074D] md:dark:text-gray-400"
               >
                 Email Address
-              </label>
+              </p>
               <input
                 type="email"
                 onChange={(e) => setEmail(e.target.value)}
@@ -59,12 +59,12 @@ const Login = () => {
               />
             </div>
             <div className="mb-5">
-              <label
+              <p
                 htmlFor="password"
                 className="mb-3 block text-base font-medium text-[#07074D] md:dark:text-gray-400"
               >
                 Password
-              </label>
+              </p>
               <input
                 type="password"
                 onChange={(e) => setPassword(e.target.value)}

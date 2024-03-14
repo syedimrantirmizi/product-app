@@ -13,12 +13,12 @@ const Card = ({ id, desc, img, price, title }) => {
         />
       </div>
       <div className="p-4 flex flex-col gap-4">
-        <h3 className="text-lg font-medium mb-2 md:dark:text-gray-400">
+        <h3 className="text-lg font-medium mb-2 md:dark:text-gray-400 line-clamp-1">
           {title}
         </h3>
         <p
           id="desc"
-          className="text-gray-600 text-sm mb-4 h-[120px] overflow-hidden"
+          className="text-gray-600 text-sm mb-4 line-clamp-3 overflow-hidden"
         >
           {desc}
         </p>

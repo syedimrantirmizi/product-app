@@ -3,28 +3,11 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { db } from "../firebase";
 
-const Navbar = () => {
+const Navbar = ({name = null}) => {
   const navigate = useNavigate();
-
-  const [name, setName] = useState(null);
-  const getName = async () => {
-    if (!localStorage.getItem("uid")) {
-      return;
-    }
-    const uid = localStorage.getItem("uid");
-    const docRef = doc(db, "users", uid);
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
-      setName(docSnap.data().name);
-    } else {
-      console.log("No such document!");
-    }
-  };
-  useEffect(() => {
-    getName();
-  }, []);
+  
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900">
+    <nav className="bg-white border-gray-200 dark:bg-gray-900 ">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <p
           className="flex items-center space-x-3 rtl:space-x- cursor-pointer select-none"
@@ -45,7 +28,7 @@ const Navbar = () => {
             }
             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 transition-all duration-500"
           >
-            {!localStorage.getItem("uid") ? "Signin" : name}
+            {localStorage.getItem("uid") ? name : "Signin" }
           </button>
           <button
             data-collapse-toggle="navbar-cta"
